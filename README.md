@@ -345,8 +345,54 @@ int main() {
 
 ```
 # OUTPUT 
-![alt text](<Screenshot 2024-04-04 140515.png>)
+```
+ STATES OF NFA :                A, B, C, D, E, F, 
 
+ GIVEN SYMBOLS FOR NFA:         0, 1, eps
+
+
+ NFA STATE TRANSITION TABLE 
+
+
+STATES  |0      |1      eps
+--------+------------------------------------
+A       |FC     |-      |BF 
+B       |-      |C      |- 
+C       |-      |-      |D 
+D       |E      |A      |- 
+E       |A      |-      |BF 
+F       |-      |-      |- 
+
+ e-Closure (A) :        ABF
+
+ e-Closure (B) :        B
+
+ e-Closure (C) :        CD
+
+ e-Closure (D) :        D
+
+ e-Closure (E) :        BEF
+
+ e-Closure (F) :        F
+
+
+********************************************************
+
+                 DFA TRANSITION STATE TABLE              
+
+
+ STATES OF DFA :                ABF, CDF, CD, BEF, 
+
+ GIVEN SYMBOLS FOR DFA:         0, 1, 
+
+STATES  |0      |1
+--------+-----------------------
+ABF     |CDF    |CD 
+CDF     |BEF    |ABF 
+CD      |BEF    |ABF 
+BEF     |ABF    |CD 
+
+```
 # RESULT
 The program was sucessfully converted from NFA to DFA.
 
